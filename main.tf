@@ -2,7 +2,7 @@
 
 resource "tls_private_key" "linkerd_root_ca" {
   algorithm   = "ECDSA"
-  ecdsa_curve = "P384"
+  ecdsa_curve = "P256"
 }
 
 resource "tls_self_signed_cert" "linkerd_root_ca" {
@@ -26,7 +26,7 @@ resource "tls_self_signed_cert" "linkerd_root_ca" {
 
 resource "tls_private_key" "linkerd_issuer" {
   algorithm   = "ECDSA"
-  ecdsa_curve = "P384"
+  ecdsa_curve = "P256"
 }
 
 resource "tls_cert_request" "linkerd_issuer" {
