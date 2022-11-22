@@ -16,6 +16,6 @@ variable "linkerd-viz" {
       ) || (
       var.linkerd-viz.username != "" && var.linkerd-viz.password != ""
     )
-    error_message = "linkerd-viz:e either none or both vars username and password must be defined."
+    error_message = "Either none or both vars linkerd-viz.username and linkerd-viz.password must be defined."
   }
 }
