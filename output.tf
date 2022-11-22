@@ -42,5 +42,5 @@ output "config" {
 
 output "linkerd-viz-htpasswd" {
   sensitive = true
-  value = local.linkerd-viz-enabled ? "${var.linkerd-viz.username}:${module.linkerd-viz-passwd[0].secret}" : ""
+  value     = local.linkerd-viz-enabled ? "${var.linkerd-viz.username}:${module.linkerd-viz-passwd[0].secret}" : ""
 }
