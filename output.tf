@@ -39,3 +39,10 @@ output "config" {
     issuer_crt_expiry = tls_locally_signed_cert.linkerd_issuer.validity_end_time
   }
 }
+
+output "linkerd-viz-htpasswd" {
+  sensitive = true
+  value = {
+    password = local.linkerd-viz-enabled ? "${var.linkerd-viz.username}:${module.linkerd-viz-passwd[0].secret}" : ""
+  }
+}
